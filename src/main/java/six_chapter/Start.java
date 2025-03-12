@@ -19,8 +19,7 @@ public class Start {
         System.out.print(((p1.x) == (p2.x)) && ((p1.y) == (p2.y)));//сравнение первой и второй
         System.out.println(" " + p2);
 
-
-        Line line = new Line(1, 2, 3, 4);
+        Line line = new Line(p1, p3);
         System.out.println(line.toString());
     }
 }
