@@ -11,6 +11,7 @@ public class Line {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
+
     //Getters
     public Point getStartPoint(){
         return this.startPoint;
@@ -25,7 +26,6 @@ public class Line {
     public void setEndPoint(Point endPoint){
         this.endPoint = endPoint;
     }
-
     public String toString(){
         return "Line: [StartPoint (" + getStartPoint() + ") "+", EndPoint (" + getEndPoint() + ")]";
     }
