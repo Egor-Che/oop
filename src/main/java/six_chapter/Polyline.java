@@ -1,37 +1,35 @@
 package six_chapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Polyline {
-    private Point startPoint;
-    private Point endPoint;
-
-    public Polyline(Point startPoint, Point endPoint) {
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
+    List<Line> lineList;//объявление
+    //конструктор
+    public Polyline(List<Line> lineList) {
+        this.lineList = lineList;
     }
-    //Getters
-    public Point getStartPoint(){
-        return this.startPoint;
+    //2 конструктор
+    public static Polyline buildPolyline(List<Point> pointList) {
+        List<Line> lineList = new ArrayList<>();
+        for (int i = 1; i < pointList.size(); i++) {
+            lineList.add(new Line(pointList.get(i-1),pointList.get(i)));
+        }
+        return new Polyline(lineList);
     }
-    public Point getEndPoint(){
-        return this.endPoint;
+    public double getBrokenLineLenght(){
+        double lenght = 0.;
+        for (int i = 0; i < lineList.size(); i++) {
+            lenght += lineList.get(i).getLineLenght();
+        }
+        return lenght;
     }
-    //Setters
-    public void setStartPoint(Point startPoint){
-        this.startPoint = startPoint;
-    }
-
-    public void setEndPoint(Point endPoint){
-        this.endPoint = endPoint;
-    }
+    @Override
     public String toString(){
-        return "Line: [StartPoint (" + getStartPoint() + ") " + ", EndPoint (" + getEndPoint() + ")]";
+        String brokenLine = "";
+        for (int i = 0; i < lineList.size(); i++) {
+            brokenLine += lineList.get(i).toString()+"\n";
+        }
+        return brokenLine;
     }
 }
-/*
-Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
-Рассчитать длину Ломаной
-Получить у Ломаной массив Линий
-Рассчитать длину массива Линий
-Сравнить длину Ломаной и массива Линий: они должны совпасть
-Изменить координаты Точки {2,8} таким образом, чтобы она стала иметь значение {12,8}.
-Если изменения отразились в данной точке, в Ломаной и в двух Линиях массива (из пункта 3), то задача решена верно
- */

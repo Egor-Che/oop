@@ -1,5 +1,9 @@
 package six_chapter;
 
+import java.util.List;
+
+import static six_chapter.Polyline.buildPolyline;
+
 public class Start {
     public static void main(String[] args) {
         //Задание 1 - точка координат, сравнение точек
@@ -17,56 +21,66 @@ public class Start {
         //Вывод точек - задание 1
         System.out.println("Точки: "); //Задание на вывод и равнение точек
         System.out.print(p1 + " ");
-        System.out.print(((p1.x) == (p3.x)) && ((p1.y) == (p3.y)));//сравнение первой и третьей
+        System.out.print(p1.equals(p3));//сравнение первой и третьей
         System.out.println(" " + p3 + " - сравнение 1 и 3 точек");
 
         System.out.print(p2 + " ");
-        System.out.print(((p2.x) == (p3.x)) && ((p2.y) == (p3.y)));//сравнение второй и третьей
+        System.out.print(p2.equals(p3));//сравнение второй и третьей
         System.out.println(" " + p3 + " - сравнение 2 и 3 точек");
 
         System.out.print(p1 + " ");
-        System.out.print(((p1.x) == (p2.x)) && ((p1.y) == (p2.y)));//сравнение первой и второй
+        System.out.print(p1.equals(p2));//сравнение первой и второй
         System.out.println(" " + p2 + " - сравнение 1 и 2 точек");
 
         System.out.println(" "); //Переход от задания точки к заданию линии
         System.out.println("Линии: "); //Переход от задания точки к заданию линии
 
-        //вывод линий - задание 2
-        Line line1 = new Line(p1, p3);
-        System.out.println(line1.toString());
-        Line line2 = new Line(p4, p5);
-        System.out.println(line2.toString());
-        Line line3 = new Line(p3, p4);
-        System.out.println(line3.toString() + " - Начальные координаты линии 3");
+        Line line1 = new Line(p1,p3);
+        System.out.println(line1);
+        Line line2 = new Line(p4,p5);
+        System.out.println(line2);
+        Line line3 = new Line(p3,p4);
+        System.out.println(line3);
+        //меняем координаты начала и конца 3 линии
+        p3.setAll(4,22);
+        p4.setAll(14,5);
 
-        System.out.println("Изменение координат начала и конца линии 3");
-        p3 = new Point(9,12);
-        p4 = new Point(13,16);
-        line1 = new Line(p1, p3);
-        System.out.println(line1.toString());
-        line2 = new Line(p4, p5);
-        System.out.println(line2.toString());
-        line3 = new Line(p3, p4);
-        System.out.println(line3.toString() + " - Новые координаты линии 3");
-        double dis1=Math.sqrt((p1.x-p3.x)*(p1.x-p3.x) + (p1.y-p3.y)*(p1.y-p3.y));
-        double dis2=Math.sqrt((p4.x-p5.x)*(p4.x-p5.x) + (p4.y-p5.y)*(p4.y-p5.y));
-        double dis3=Math.sqrt((p3.x-p4.x)*(p3.x-p4.x) + (p3.y-p4.y)*(p3.y-p4.y));
-        double dis = dis1 + dis2 + dis3;
-        System.out.println("Общая длина трех отрезков равна: " + dis);
+        System.out.println("Вывод с изменными координатами: "); //Переход от задания точки к заданию линии
+        System.out.println(line1);
+        System.out.println(line2);
+        System.out.println(line3);
+        System.out.println(line1.getLineLenght() + line2.getLineLenght() + line3.getLineLenght());
 
-        //вывод ломаной линии - задание 3
-        System.out.println(" "); //Переход от задания линии к заданию ломаная линия
-        System.out.println("Ломаная линия:");
-        Polyline polyline = new Polyline(p6, p7);
-        System.out.println(polyline.toString());
-        Polyline polyline2 = new Polyline(p7, p8);
-        System.out.println(polyline2.toString());
-        Polyline polyline3 = new Polyline(p8, p9);
-        System.out.println(polyline3.toString());
-        double dis4=Math.sqrt((p6.x-p7.x)*(p6.x-p7.x) + (p6.y-p7.y)*(p6.y-p7.y));
-        double dis5=Math.sqrt((p7.x-p8.x)*(p7.x-p8.x) + (p7.y-p8.y)*(p7.y-p8.y));
-        double dis6=Math.sqrt((p8.x-p9.x)*(p8.x-p9.x) + (p8.y-p9.y)*(p8.y-p9.y));
-        double disPolyline = dis4 + dis5 + dis6;
-        System.out.println("Общая длина трех отрезков равна: " + disPolyline);
+        System.out.println("Ломаная линия: "); //Переход к ломаной
+        List<Point> pointList = List.of(p6,p7,p8,p9);
+        Polyline polyline1 = buildPolyline(pointList);
+        System.out.println(polyline1.toString());
+        System.out.println(polyline1.getBrokenLineLenght());
+
+        //массив отрезков ломаной + сравнение длин с ломаной
+        Line line4 = new Line(p6,p7);
+        System.out.println(line4);
+        Line line5 = new Line(p7,p8);
+        System.out.println(line5);
+        Line line6 = new Line(p8,p9);
+        System.out.println(line6);
+        System.out.println(line4.getLineLenght() + line5.getLineLenght() + line6.getLineLenght());
+
+        //изменение точки, вывод обновленных линий
+        p7.setX(12);
+        System.out.println(line4);
+        System.out.println(line5);
+        System.out.println(line6);
+        System.out.println(line4.getLineLenght() + line5.getLineLenght() + line6.getLineLenght());
+        System.out.println(polyline1.getBrokenLineLenght());
     }
 }
+/*
+Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
+Рассчитать длину Ломаной
+Получить у Ломаной массив Линий
+Рассчитать длину массива Линий
+Сравнить длину Ломаной и массива Линий: они должны совпасть
+Изменить координаты Точки {2,8} таким образом, чтобы она стала иметь значение {12,8}.
+Если изменения отразились в данной точке, в Ломаной и в двух Линиях массива (из пункта 3), то задача решена верно
+ */
