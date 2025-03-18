@@ -1,9 +1,9 @@
 package six_chapter;
-
 import java.util.List;
 
+import static six_chapter.CityName.getCityName;
+import static six_chapter.CityName.setCityName;
 import static six_chapter.Polyline.buildPolyline;
-
 public class Start {
     public static void main(String[] args) {
         //Задание 1 - точка координат, сравнение точек
@@ -73,14 +73,13 @@ public class Start {
         System.out.println(line6);
         System.out.println(line4.getLineLenght() + line5.getLineLenght() + line6.getLineLenght());
         System.out.println(polyline1.getBrokenLineLenght());
+
+        System.out.println(" "); //
+        System.out.println("Города: "); //Переход к городам
+
+        String cityName1 = String.valueOf(getCityName());
+        String cityName2 = String.valueOf(setCityName("Moscow"));
+        System.out.println(cityName1);
+        System.out.println(cityName2);
     }
 }
-/*
-Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
-Рассчитать длину Ломаной
-Получить у Ломаной массив Линий
-Рассчитать длину массива Линий
-Сравнить длину Ломаной и массива Линий: они должны совпасть
-Изменить координаты Точки {2,8} таким образом, чтобы она стала иметь значение {12,8}.
-Если изменения отразились в данной точке, в Ломаной и в двух Линиях массива (из пункта 3), то задача решена верно
- */
