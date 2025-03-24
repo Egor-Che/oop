@@ -1,7 +1,7 @@
 package seven_chapter;
 public class Fraction {
     private final int numerator;
-    private final int denominator = 0;
+    private final int denominator;
     private final float fraction;
     public Fraction(int numerator, int denominator) {
         if (denominator <= 0){
