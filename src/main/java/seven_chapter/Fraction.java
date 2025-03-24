@@ -1,13 +1,14 @@
 package seven_chapter;
 public class Fraction {
     private final int numerator;
-    private final int denominator;
+    private final int denominator = 0;
     private final float fraction;
     public Fraction(int numerator, int denominator) {
-        this.numerator = numerator;
-        if (denominator > 0){
-            this.denominator = denominator;
+        if (denominator <= 0){
+            throw new IllegalArgumentException("Знаменатель не может быть отрицательным, или равным нулю");
         }
+        this.numerator = numerator;
+        this.denominator = denominator;
         this.fraction = (float) numerator / (float) denominator;
     }
     public int getNumerator() {
