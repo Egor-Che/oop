@@ -1,4 +1,8 @@
 package seven_chapter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Start {
     public static void main(String[] args) {
         Fraction f1 = new Fraction(1,3);
@@ -15,8 +19,8 @@ public class Start {
 
 
         //Студент
-        Student student = new Student("Иван Петров");
-
+        // Создание студента с начальными оценками
+        Student student = new Student("Иван Петров", Arrays.asList(5, 4, 3));
         student.addGrade(2);
         student.addGrade(3);
         student.addGrade(4);

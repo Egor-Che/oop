@@ -7,15 +7,20 @@ public class Student {
     private final String name;  // обязательное поле, неизменяемое после создания
     private final List<Integer> grades;  // список оценок
 
-    // Конструктор с обязательным именем
-    public Student(String name) {
+    // Конструктор с именем и начальными оценками
+    public Student(String name, List<Integer> initialGrades) {
         if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Имя студента не может быть пустым");
+            throw new IllegalArgumentException("Имя студента обязательно");
         }
         this.name = name;
         this.grades = new ArrayList<>();
-    }
 
+        if (initialGrades != null) {
+            for (int grade : initialGrades) {
+                this.addGrade(grade); // Используем addGrade для добавления оценки
+            }
+        }
+    }
     // Геттер для имени
     public String getName() {
         return name;
@@ -56,7 +61,6 @@ public class Student {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", grades=" + grades +
-                ", average=" + String.format("%.2f", getAverageGrade()) +
                 '}';
     }
 }
