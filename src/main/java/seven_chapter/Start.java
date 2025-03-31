@@ -12,5 +12,39 @@ public class Start {
         System.out.println(fraction);
 
         fraction.print("Fraction: "); //вывод финального значения задачи
+
+
+        //Студент
+        Student student = new Student("Иван Петров");
+
+        student.addGrade(2);
+        student.addGrade(3);
+        student.addGrade(4);
+        student.addGrade(5);
+
+        System.out.println(student);
+
+        // Попытка добавить недопустимую оценку
+        try {
+            student.addGrade(1);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+        // Попытка удалить оценку
+        try {
+            student.removeGrade(1);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+
+        // Вывод информации о студенте
+        System.out.println("Студент: " + student.getName());
+        System.out.println("Оценки: " + student.getGrades());
+        System.out.println("Средний балл: " + student.getAverageGrade());
+
+        student.addGrade(3);
+        student.addGrade(4);
+        student.addGrade(5);
+        System.out.println(student);
     }
 }
