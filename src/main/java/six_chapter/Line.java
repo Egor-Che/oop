@@ -26,6 +26,11 @@ public class Line {
     public void setEndPoint(Point endPoint){
         this.endPoint = endPoint;
     }
+    //рассчет длины линии
+    public double getLineLenght(){
+        return Math.sqrt(Math.pow(startPoint.getX() - endPoint.getX(), 2) + (Math.pow(startPoint.getY() - endPoint.getY(), 2)));
+    }
+    @Override
     public String toString(){
         return "Line: [StartPoint (" + getStartPoint() + ") "+", EndPoint (" + getEndPoint() + ")]";
     }
