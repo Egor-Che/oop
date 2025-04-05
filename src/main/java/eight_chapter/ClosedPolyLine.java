@@ -1,5 +1,5 @@
 package eight_chapter;
-class ClosedPolyLine extends PolyLine implements Start.Measurable {
+class ClosedPolyLine extends PolyLine {
     public ClosedPolyLine(Point... points) {
         super(points);
     }

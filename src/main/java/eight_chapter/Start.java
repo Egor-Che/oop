@@ -1,9 +1,5 @@
 package eight_chapter;
 public class Start {
-    // Общий интерфейс для измеряемых объектов
-    interface Measurable {
-        double getLength();
-    }
     // Метод для обработки набора измеряемых объектов
     public static void printLengths(Measurable... measurables) {
         for (Measurable m : measurables) {

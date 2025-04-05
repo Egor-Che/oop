@@ -1,6 +1,6 @@
 package eight_chapter;
 
-class Point {
+class Point extends six_chapter.Point {
     int x, y;
 
     public Point(int x, int y) {

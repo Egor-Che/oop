@@ -1,5 +1,5 @@
 package eight_chapter;
-class PolyLine implements Start.Measurable {
+class PolyLine implements Measurable {
     public Point[] points;
 
     public PolyLine(Point... points) {
