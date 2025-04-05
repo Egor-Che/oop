@@ -1,6 +1,5 @@
 package eight_chapter;
-
-class PolyLine {
+class PolyLine implements Start.Measurable {
     public Point[] points;
 
     public PolyLine(Point... points) {
@@ -8,6 +7,12 @@ class PolyLine {
             throw new IllegalArgumentException("Ломаная линия должна иметь не менее 3 точек");
         }
         this.points = points;
+    }
+
+    // Реализация метода интерфейса Measurable
+    @Override
+    public double getLength() {
+        return length();
     }
 
     public double length() {

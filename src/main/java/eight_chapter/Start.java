@@ -1,6 +1,15 @@
 package eight_chapter;
-
 public class Start {
+    // Общий интерфейс для измеряемых объектов
+    interface Measurable {
+        double getLength();
+    }
+    // Метод для обработки набора измеряемых объектов
+    public static void printLengths(Measurable... measurables) {
+        for (Measurable m : measurables) {
+            System.out.println("Длина: " + m.getLength());
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Точка с тремя координатами:");
         //Point3D
@@ -8,10 +17,11 @@ public class Start {
         System.out.println("X: " + point.x + ", Y: " + point.y + ", Z: " + point.z);
 
         //ClosedPolyLine
-        Point p1 = new Point(1, 1);
-        Point p2 = new Point(3, 4);
-        Point p3 = new Point(6, 0);
-        Point p4 = new Point(4, 2);
+        // Создаем точки для ломаных линий
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(1, 2);
+        Point p3 = new Point(3, 1);
+        Point p4 = new Point(4, 3);
 
         System.out.println("Обычная ломаная линия:");
         PolyLine line = new PolyLine(p1, p2, p3, p4);
@@ -20,5 +30,9 @@ public class Start {
         System.out.println("\nЗамкнутая ломаная линия:");
         ClosedPolyLine closedLine = new ClosedPolyLine(p1, p2, p3, p4);
         closedLine.draw();
+
+        System.out.println("\nВывод длин обеих ломаных через интерфейс:");
+        // Вызываем метод с обоими типами линий
+        printLengths(line, closedLine);
     }
 }
