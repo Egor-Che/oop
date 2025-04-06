@@ -58,9 +58,6 @@ public class Start {
         // Полиморфизм 6 - Сложение
         System.out.println("");
         System.out.println("Вывод решения задания Полиморфизм 6 - Сложение");
-        //System.out.println(sumAll(1, 2, 3)); // 6.0
-        //System.out.println(sumAll(0.5, 1.5, 2.5)); // 4.5
-
         Fraction f5 = new Fraction(2, 1);
         Fraction f6 = new Fraction(3, 5);
         Fraction f7 = new Fraction(23, 10);
