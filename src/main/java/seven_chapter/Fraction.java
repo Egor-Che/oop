@@ -46,7 +46,14 @@ public class Fraction extends Number {
         }
         return new Fraction(numTmp, denTmp);
     }
-
+    // Статический метод для суммирования всех чисел
+    public static double sumAll(Number... numbers) {
+        double sum = 0.0;
+        for (Number num : numbers) {
+            sum += num.doubleValue();
+        }
+        return sum;
+    }
     @Override
     public String toString() {
         return "Fraction{" +

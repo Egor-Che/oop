@@ -3,6 +3,8 @@ package seven_chapter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static seven_chapter.Fraction.sumAll;
+
 public class Start {
     public static void main(String[] args) {
         Fraction f1 = new Fraction(1,3);
@@ -50,5 +52,26 @@ public class Start {
         student.addGrade(4);
         student.addGrade(5);
         System.out.println(student);
+
+
+
+        // Полиморфизм 6 - Сложение
+        System.out.println("");
+        System.out.println("Вывод решения задания Полиморфизм 6 - Сложение");
+        //System.out.println(sumAll(1, 2, 3)); // 6.0
+        //System.out.println(sumAll(0.5, 1.5, 2.5)); // 4.5
+
+        Fraction f5 = new Fraction(2, 1);
+        Fraction f6 = new Fraction(3, 5);
+        Fraction f7 = new Fraction(23, 10);
+        System.out.println("Сложение значений первой строки: " + String.format("%.4f", sumAll(f5, f6, f7)) + " - значение округлено до 4 знаков после запятой"); //первая строка
+        Fraction f8 = new Fraction(36, 10);
+        Fraction f9 = new Fraction(49, 12);
+        Fraction f10 = new Fraction(3, 1);
+        Fraction f11 = new Fraction(3, 2);
+        System.out.println("Сложение значений второй строки: " + String.format("%.4f", sumAll(f8, f9, f10, f11)) + " - значение округлено до 4 знаков после запятой"); //вторая строка
+        Fraction f12 = new Fraction(1, 3);
+        Fraction f13 = new Fraction(1, 1);
+        System.out.println("Сложение значений третьей строки: " + String.format("%.4f", sumAll(f12, f13)) + " - значение округлено до 4 знаков после запятой"); //третья строка
     }
 }
