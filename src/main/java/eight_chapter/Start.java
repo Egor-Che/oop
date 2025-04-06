@@ -30,5 +30,19 @@ public class Start {
         System.out.println("\nВывод длин обеих ломаных через интерфейс:");
         // Вызываем метод с обоими типами линий
         printLengths(line, closedLine);
+
+
+
+        System.out.println(" ");
+        System.out.println("Практика ООП. *Полиморфизм #7. Птицы - задание необязательное:");
+        Bird[] birds = {
+                new Sparrow(),
+                new Cuckoo(),
+                new Parrot("Попка не дуррррак!")
+        };
+
+        for (Bird bird : birds) {
+            bird.sound();
+        }
     }
 }
