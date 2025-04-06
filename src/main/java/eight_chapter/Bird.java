@@ -1,4 +1,5 @@
 package eight_chapter;
+import java.util.List;
 import java.util.Random;
 
 // Базовый класс Птица
@@ -46,5 +47,18 @@ class Parrot extends Bird {
         int maxLength = Math.min(text.length(), 1 + random.nextInt(text.length()));
         int n = 1 + random.nextInt(maxLength); // минимум 1, максимум длина текста
         System.out.println(text.substring(0, n));
+    }    // Метод, который принимает набор птиц и вызывает у каждой метод sound()
+
+
+    public static void makeBirdsSing(List<Bird> birds) {
+        System.out.println("Начинаем концерт птиц!");
+        System.out.println("----------------------");
+
+        for (Bird bird : birds) {
+            bird.sound();
+        }
+
+        System.out.println("----------------------");
+        System.out.println("Концерт окончен!");
     }
 }

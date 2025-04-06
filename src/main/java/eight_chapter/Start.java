@@ -1,4 +1,10 @@
 package eight_chapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static eight_chapter.Parrot.makeBirdsSing;
+
 public class Start {
     // Метод для обработки набора измеряемых объектов
     public static void printLengths(Measurable... measurables) {
@@ -44,5 +50,30 @@ public class Start {
         for (Bird bird : birds) {
             bird.sound();
         }
+
+
+        System.out.println(" ");
+        System.out.println("Практика ООП. * Полиморфизм #8. Птичий рынок - задание необязательное:");
+
+        // Создаем список птиц
+        List<Bird> manyBirds = new ArrayList<>();
+
+        // Добавляем несколько воробьев
+        manyBirds.add(new Sparrow());
+        manyBirds.add(new Sparrow());
+
+        // Добавляем несколько кукушек
+        manyBirds.add(new Cuckoo());
+        manyBirds.add(new Cuckoo());
+        manyBirds.add(new Cuckoo());
+
+        // Добавляем несколько попугаев с разными фразами
+        manyBirds.add(new Parrot("Каррррамба!"));
+        manyBirds.add(new Parrot("На аборрррдаж!"));
+        manyBirds.add(new Parrot("Аррррива!"));
+
+        // Вызываем метод для прослушивания пения птиц
+        makeBirdsSing(manyBirds);
+
     }
 }
