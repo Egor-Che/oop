@@ -1,9 +1,8 @@
-package seven_chapter;
+package ru.egor_che.seven_chapter;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-import static seven_chapter.Fraction.sumAll;
+import static ru.egor_che.seven_chapter.Fraction.sumAll;
 
 public class Start {
     public static void main(String[] args) {

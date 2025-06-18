@@ -1,6 +1,6 @@
-package eight_chapter;
+package ru.egor_che.eight_chapter;
 
-class Point extends six_chapter.Point {
+class Point extends ru.egor_che.six_chapter.Point {
     int x, y;
 
     public Point(int x, int y) {

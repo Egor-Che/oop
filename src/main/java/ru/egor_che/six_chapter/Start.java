@@ -1,9 +1,6 @@
-package six_chapter;
+package ru.egor_che.six_chapter;
 import java.util.List;
 
-import static six_chapter.CityName.getCityName;
-import static six_chapter.CityName.setCityName;
-import static six_chapter.Polyline.buildPolyline;
 public class Start {
     public static void main(String[] args) {
         //Задание 1 - точка координат, сравнение точек
@@ -53,7 +50,7 @@ public class Start {
 
         System.out.println("Ломаная линия: "); //Переход к ломаной
         List<Point> pointList = List.of(p6,p7,p8,p9);
-        Polyline polyline1 = buildPolyline(pointList);
+        Polyline polyline1 = Polyline.buildPolyline(pointList);
         System.out.println(polyline1.toString());
         System.out.println(polyline1.getBrokenLineLenght());
 
@@ -77,8 +74,8 @@ public class Start {
         System.out.println(" "); //
         System.out.println("Города: "); //Переход к городам
 
-        String cityName1 = String.valueOf(getCityName());
-        String cityName2 = String.valueOf(setCityName("Moscow"));
+        String cityName1 = String.valueOf(CityName.getCityName());
+        String cityName2 = String.valueOf(CityName.setCityName("Moscow"));
         System.out.println(cityName1);
         System.out.println(cityName2);
     }

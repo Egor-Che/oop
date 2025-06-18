@@ -1,9 +1,9 @@
-package eight_chapter;
+package ru.egor_che.eight_chapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static eight_chapter.Parrot.makeBirdsSing;
+import static ru.egor_che.eight_chapter.Parrot.makeBirdsSing;
 
 public class Start {
     // Метод для обработки набора измеряемых объектов

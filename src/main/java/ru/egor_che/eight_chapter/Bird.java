@@ -1,4 +1,4 @@
-package eight_chapter;
+package ru.egor_che.eight_chapter;
 import java.util.List;
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package seven_chapter;
+package ru.egor_che.seven_chapter;
 public class Fraction extends Number {
     private final int numerator;
     private final int denominator;

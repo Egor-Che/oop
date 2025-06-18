@@ -1,4 +1,4 @@
-package eight_chapter;
+package ru.egor_che.eight_chapter;
 class PolyLine implements Measurable {
     public Point[] points;
 

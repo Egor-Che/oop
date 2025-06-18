@@ -1,6 +1,5 @@
-package six_chapter;
-
-public class Line {
+package ru.egor_che.eight_chapter;
+public class Line implements Measurable {
     private Point startPoint;
     private Point endPoint;
 
@@ -13,15 +12,15 @@ public class Line {
     }
 
     //Getters
-    public Point getStartPoint(){
+    public ru.egor_che.six_chapter.Point getStartPoint(){
         return this.startPoint;
     }
-    public Point getEndPoint(){
+    public ru.egor_che.six_chapter.Point getEndPoint(){
         return this.endPoint;
     }
     //Setters
-    public void setStartPoint(Point startPoint){
-        this.startPoint = startPoint;
+    public void setStartPoint(ru.egor_che.six_chapter.Point startPoint){
+        this.startPoint = (Point) startPoint;
     }
     public void setEndPoint(Point endPoint){
         this.endPoint = endPoint;
@@ -33,5 +32,10 @@ public class Line {
     @Override
     public String toString(){
         return "Line: [StartPoint (" + getStartPoint() + ") "+", EndPoint (" + getEndPoint() + ")]";
+    }
+
+    @Override
+    public double getLength() {
+        return 0;
     }
 }

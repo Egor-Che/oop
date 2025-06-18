@@ -1,4 +1,4 @@
-package six_chapter;
+package ru.egor_che.six_chapter;
 
 import java.util.Objects;
 
