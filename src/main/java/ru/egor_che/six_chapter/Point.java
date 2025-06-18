@@ -1,4 +1,4 @@
-package six_chapter;
+package ru.egor_che.six_chapter;
 
 import java.util.Objects;
 
@@ -11,7 +11,11 @@ public class Point {
         this.x = x;
         this.y = y;
     }
-//Getters
+
+    public Point() {
+    }
+
+    //Getters
     public int getX() {
         return x;
     }

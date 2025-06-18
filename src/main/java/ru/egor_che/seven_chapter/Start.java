@@ -1,7 +1,8 @@
-package seven_chapter;
+package ru.egor_che.seven_chapter;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+
+import static ru.egor_che.seven_chapter.Fraction.sumAll;
 
 public class Start {
     public static void main(String[] args) {
@@ -50,5 +51,23 @@ public class Start {
         student.addGrade(4);
         student.addGrade(5);
         System.out.println(student);
+
+
+
+        // Полиморфизм 6 - Сложение
+        System.out.println("");
+        System.out.println("Вывод решения задания Полиморфизм 6 - Сложение");
+        int f5 = 2;
+        Fraction f6 = new Fraction(3, 5);
+        Double f7 = 2.3;
+        System.out.println("Сложение значений первой строки: " + String.format("%.4f", sumAll(f5, f6, f7)) + " - значение округлено до 4 знаков после запятой"); //первая строка
+        Double f8 = 3.6;
+        Fraction f9 = new Fraction(49, 12);
+        int f10 = 3;
+        Fraction f11 = new Fraction(3, 2);
+        System.out.println("Сложение значений второй строки: " + String.format("%.4f", sumAll(f8, f9, f10, f11)) + " - значение округлено до 4 знаков после запятой"); //вторая строка
+        Fraction f12 = new Fraction(1, 3);
+        int f13 = 1;
+        System.out.println("Сложение значений третьей строки: " + String.format("%.4f", sumAll(f12, f13)) + " - значение округлено до 4 знаков после запятой"); //третья строка
     }
 }

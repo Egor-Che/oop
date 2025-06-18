@@ -1,4 +1,4 @@
-package seven_chapter;
+package ru.egor_che.seven_chapter;
 import java.util.ArrayList;
 import java.util.List;
 

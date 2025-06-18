@@ -1,8 +1,4 @@
-package six_chapter;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package ru.egor_che.six_chapter;
 
 public class City {
     private CityName cityName;
