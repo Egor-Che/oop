@@ -43,5 +43,16 @@ public class Start {
         System.out.println(line4.equals(line5)); // true
         System.out.println(line4.equals(line6)); // true
         System.out.println(line4.points[0] == line6.points[0]); // false - проверка глубокого копирования
+
+
+
+
+
+        System.out.println("Соусы"); // Соусы
+        Sauce s1 = new Sauce("Табаско", Sauce.Spiciness.VERY_SPICY);
+        Sauce s2 = new Sauce("Барбекю", Sauce.Spiciness.NOT_SPICY);
+
+        System.out.println(s1); // Соус Табаско: очень острый
+        System.out.println(s2); // Соус Барбекю: не острый
     }
 }
